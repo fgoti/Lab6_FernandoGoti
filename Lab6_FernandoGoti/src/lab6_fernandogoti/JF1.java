@@ -610,6 +610,9 @@ public class JF1 extends javax.swing.JFrame {
                 DefaulTableModel modelo = new DefaulTableModel();
                 
             }
+            System.out.println("");
+            System.out.println("");
+                    
             
             
         }
