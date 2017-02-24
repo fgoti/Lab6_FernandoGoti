@@ -6,6 +6,7 @@
 package lab6_fernandogoti;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -36,13 +37,13 @@ public class JF1 extends javax.swing.JFrame {
         JTLUGAR = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        JTSEGURIDAD = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         JCOMBOENTRADA = new javax.swing.JComboBox<>();
         JCOMBOSALIDA = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        TABPRINCIPAL = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         JBCATEGORIACANCHA = new javax.swing.JComboBox<>();
@@ -115,7 +116,7 @@ public class JF1 extends javax.swing.JFrame {
                 .addContainerGap(55, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Cancha", jPanel2);
+        TABPRINCIPAL.addTab("Cancha", jPanel2);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -128,7 +129,7 @@ public class JF1 extends javax.swing.JFrame {
             .addGap(0, 147, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Casa", jPanel3);
+        TABPRINCIPAL.addTab("Casa", jPanel3);
 
         jLabel7.setText("Categoria");
 
@@ -169,7 +170,7 @@ public class JF1 extends javax.swing.JFrame {
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Restaurante", jPanel1);
+        TABPRINCIPAL.addTab("Restaurante", jPanel1);
 
         JBOTTONLUGAR.setText("Guardar");
         JBOTTONLUGAR.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -196,9 +197,9 @@ public class JF1 extends javax.swing.JFrame {
                                 .addGroup(LugarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jScrollPane1)
                                     .addComponent(JTNOMBRE)
-                                    .addComponent(jTextField1))
+                                    .addComponent(JTSEGURIDAD))
                                 .addGap(32, 32, 32)
-                                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(TABPRINCIPAL, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(LugarLayout.createSequentialGroup()
                                 .addGap(149, 149, 149)
                                 .addComponent(jLabel6))))
@@ -238,10 +239,10 @@ public class JF1 extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addGroup(LugarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(JTSEGURIDAD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(LugarLayout.createSequentialGroup()
                         .addGap(69, 69, 69)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(TABPRINCIPAL, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(27, 27, 27)
                 .addGroup(LugarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
@@ -312,22 +313,49 @@ public class JF1 extends javax.swing.JFrame {
 
     private void JBOTTONLUGARMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBOTTONLUGARMouseClicked
         // TODO add your handling code here:
-        try {
-            String Nombre;
-            String Direccion;
-            int Nivel_Seguridad;
-            Carretera carretera_entrada;
-            Carretera carretera_salida;
-            String Categoria_restaurantes;
-            int Calificacion;
-            int Codigo;
-            int Distancia;
-            String Carretera_inicio;
-            String Carretera_final;
-            String Categoria_canchas;
-            String Estado;
-        } catch (Exception e) {
+        String Nombre;
+        String Direccion;
+        int Nivel_Seguridad;
+        Carretera carretera_entrada;
+        Carretera carretera_salida;
+        String Categoria_restaurantes;
+        int Calificacion;
+        int Codigo;
+        int Distancia;
+        String Carretera_inicio;
+        String Carretera_final;
+        String Categoria_canchas;
+        String Estado;
+        Nombre = JTNOMBRE.getText();
+        Direccion = JTLUGAR.getText();
+        Nivel_Seguridad = Integer.parseInt(JTSEGURIDAD.getText());
+        carretera_entrada = (Carretera) JCOMBOENTRADA.getSelectedItem();
+        carretera_salida = (Carretera) JCOMBOSALIDA.getSelectedItem();
+        if (TABPRINCIPAL.getSelectedIndex() == 0) {
+            Categoria_canchas = JBCATEGORIACANCHA.getSelectedItem().toString();
+            Estado = JCOMOESTADO.getSelectedItem().toString();
+            lLugar.add(new Lugar(Nombre, Direccion, Nivel_Seguridad, carretera_entrada, carretera_salida));
+            JOptionPane.showMessageDialog(this, "Agrego exitosamente");
+        } else if (TABPRINCIPAL.getSelectedIndex() == 2) {
+            Categoria_restaurantes = JBCOMBORESTAURANTE.getSelectedItem().toString();
+            Calificacion = Integer.parseInt(JCOMBOCALIFICACION.getSelectedItem().toString());
+            lLugar.add(new Restaurantes(Categoria_restaurantes, Calificacion, Nombre, Direccion, Nivel_Seguridad, carretera_entrada, carretera_salida));
+            JOptionPane.showMessageDialog(this, "Agrego exitosamente");
+        } else if (TABPRINCIPAL.getSelectedIndex() == 1) {
+            lLugar.add(new Casa(Nombre, Direccion, Nivel_Seguridad, carretera_entrada, carretera_salida));
+            JOptionPane.showMessageDialog(this, "Agrego exitosamente");
         }
+        JTNOMBRE.setText("");
+        JTLUGAR.setText("");
+        JTSEGURIDAD.setText("");
+        JCOMBOENTRADA.setSelectedIndex(0);
+        JCOMBOSALIDA.setSelectedIndex(0);
+        JBCATEGORIACANCHA.setSelectedIndex(0);
+        JCOMOESTADO.setSelectedIndex(0);
+        JBCOMBORESTAURANTE.setSelectedIndex(0);
+        JCOMBOCALIFICACION.setSelectedIndex(0);
+
+
     }//GEN-LAST:event_JBOTTONLUGARMouseClicked
 
     /**
@@ -385,7 +413,9 @@ public class JF1 extends javax.swing.JFrame {
     private javax.swing.JMenuItem JMLUGAR;
     private javax.swing.JTextArea JTLUGAR;
     private javax.swing.JTextField JTNOMBRE;
+    private javax.swing.JTextField JTSEGURIDAD;
     private javax.swing.JDialog Lugar;
+    private javax.swing.JTabbedPane TABPRINCIPAL;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -404,8 +434,6 @@ public class JF1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 
     ArrayList lLugar = new ArrayList();

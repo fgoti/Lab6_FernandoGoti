@@ -14,12 +14,11 @@ public class Restaurantes extends Lugar {
         super();
     }
 
-    public Restaurantes(String Categoria, int Calificacion, String Nombre, String Direccion, int Nivel_Seguridad, Carretera carretera_entrada, Carretera carretera_salida) {
+    public Restaurantes(String Categoria_restaurantes, int Calificacion, String Nombre, String Direccion, int Nivel_Seguridad, Carretera carretera_entrada, Carretera carretera_salida) {
         super(Nombre, Direccion, Nivel_Seguridad, carretera_entrada, carretera_salida);
-        this.Categoria_restaurantes = Categoria;
+        this.Categoria_restaurantes = Categoria_restaurantes;
         this.Calificacion = Calificacion;
     }
-
     public String getCategoria() {
         return Categoria_restaurantes;
     }
