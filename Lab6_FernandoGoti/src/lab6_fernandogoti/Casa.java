@@ -21,6 +21,6 @@ public class Casa extends Lugar {
 
     @Override
     public String toString() {
-        return super.toString()+"Casa{" + '}';
+        return super.getNombre();
     }
 }

@@ -37,6 +37,6 @@ public class Restaurantes extends Lugar {
 
     @Override
     public String toString() {
-        return super.toString()+"Restaurantes{" + "Categoria=" + Categoria_restaurantes + ", Calificacion=" + Calificacion + '}';
+        return super.getNombre();
     }
 }

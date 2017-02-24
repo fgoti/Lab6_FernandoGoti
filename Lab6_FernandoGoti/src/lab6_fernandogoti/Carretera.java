@@ -12,17 +12,17 @@ package lab6_fernandogoti;
 public class Carretera {
     private int Codigo;
     private int Distancia;
-    private String Carretera_inicio;
-    private String Carretera_final;
+    private Lugar Carretera_inicio;
+    private Lugar Carretera_final;
 
     public Carretera() {
     }
 
-    public Carretera(int codigo, int kilometros, String carretera_inicio, String carretera_final) {
-        this.Codigo = codigo;
-        this.Distancia = kilometros;
-        this.Carretera_inicio = carretera_inicio;
-        this.Carretera_final = carretera_final;
+    public Carretera(int Codigo, int Distancia, Lugar Carretera_inicio, Lugar Carretera_final) {
+        this.Codigo = Codigo;
+        this.Distancia = Distancia;
+        this.Carretera_inicio = Carretera_inicio;
+        this.Carretera_final = Carretera_final;
     }
 
     public int getCodigo() {
@@ -41,20 +41,28 @@ public class Carretera {
         this.Distancia = kilometros;
     }
 
-    public String getCarretera_inicio() {
+    public int getDistancia() {
+        return Distancia;
+    }
+
+    public void setDistancia(int Distancia) {
+        this.Distancia = Distancia;
+    }
+
+    public Lugar getCarretera_inicio() {
         return Carretera_inicio;
     }
 
-    public void setCarretera_inicio(String carretera_inicio) {
-        this.Carretera_inicio = carretera_inicio;
+    public void setCarretera_inicio(Lugar Carretera_inicio) {
+        this.Carretera_inicio = Carretera_inicio;
     }
 
-    public String getCarretera_final() {
+    public Lugar getCarretera_final() {
         return Carretera_final;
     }
 
-    public void setCarretera_final(String carretera_final) {
-        this.Carretera_final = carretera_final;
+    public void setCarretera_final(Lugar Carretera_final) {
+        this.Carretera_final = Carretera_final;
     }
 
     @Override

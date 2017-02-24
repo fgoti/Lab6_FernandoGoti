@@ -6,6 +6,8 @@
 package lab6_fernandogoti;
 
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -56,12 +58,40 @@ public class JF1 extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         JCOMBOCALIFICACION = new javax.swing.JComboBox<>();
         JBOTTONLUGAR = new javax.swing.JButton();
+        Carretera = new javax.swing.JDialog();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        JTcodigo = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        JTDISTANCIA = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        ENTRADA1 = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
+        SALIDA1 = new javax.swing.JComboBox<>();
+        JBOTTONGUARDARCARRETERA = new javax.swing.JButton();
+        Listar = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        comboopcion = new javax.swing.JComboBox<>();
+        Jlist = new javax.swing.JDialog();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jList_lugares = new javax.swing.JList<>();
+        jLabel16 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         JMLUGAR = new javax.swing.JMenuItem();
         JMCARRETERA = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        MListar = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+
+        Lugar.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                LugarWindowActivated(evt);
+            }
+        });
 
         jLabel1.setText("Nombre:");
 
@@ -256,6 +286,142 @@ public class JF1 extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
+        jLabel11.setText("Codigo:");
+
+        jLabel12.setText("Carretera");
+
+        jLabel13.setText("Distancia:");
+
+        jLabel14.setText("Carretera de Entrada");
+
+        jLabel15.setText("Carretera de Salida");
+
+        JBOTTONGUARDARCARRETERA.setText("Guardar");
+        JBOTTONGUARDARCARRETERA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JBOTTONGUARDARCARRETERAMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CarreteraLayout = new javax.swing.GroupLayout(Carretera.getContentPane());
+        Carretera.getContentPane().setLayout(CarreteraLayout);
+        CarreteraLayout.setHorizontalGroup(
+            CarreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CarreteraLayout.createSequentialGroup()
+                .addGroup(CarreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CarreteraLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(CarreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(CarreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel12)
+                                .addGroup(CarreteraLayout.createSequentialGroup()
+                                    .addGroup(CarreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel13)
+                                        .addComponent(jLabel11))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(CarreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(JTcodigo, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                                        .addComponent(JTDISTANCIA))))
+                            .addComponent(jLabel15)
+                            .addGroup(CarreteraLayout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ENTRADA1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(CarreteraLayout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addGroup(CarreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JBOTTONGUARDARCARRETERA)
+                            .addComponent(SALIDA1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(159, Short.MAX_VALUE))
+        );
+        CarreteraLayout.setVerticalGroup(
+            CarreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CarreteraLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel12)
+                .addGap(44, 44, 44)
+                .addGroup(CarreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(JTcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(CarreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(JTDISTANCIA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(CarreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(ENTRADA1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(CarreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(SALIDA1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(JBOTTONGUARDARCARRETERA)
+                .addGap(36, 36, 36))
+        );
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        comboopcion.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboopcionItemStateChanged(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ListarLayout = new javax.swing.GroupLayout(Listar.getContentPane());
+        Listar.getContentPane().setLayout(ListarLayout);
+        ListarLayout.setHorizontalGroup(
+            ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListarLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboopcion, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(57, Short.MAX_VALUE))
+        );
+        ListarLayout.setVerticalGroup(
+            ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListarLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(comboopcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(62, Short.MAX_VALUE))
+        );
+
+        jScrollPane3.setViewportView(jList_lugares);
+
+        jLabel16.setText("Lista:");
+
+        javax.swing.GroupLayout JlistLayout = new javax.swing.GroupLayout(Jlist.getContentPane());
+        Jlist.getContentPane().setLayout(JlistLayout);
+        JlistLayout.setHorizontalGroup(
+            JlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JlistLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(JlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(352, Short.MAX_VALUE))
+        );
+        JlistLayout.setVerticalGroup(
+            JlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JlistLayout.createSequentialGroup()
+                .addContainerGap(192, Short.MAX_VALUE)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jMenu1.setText("Menu");
@@ -280,6 +446,26 @@ public class JF1 extends javax.swing.JFrame {
 
         jMenu1.add(jMenu4);
 
+        jMenu3.setText("Listar");
+
+        MListar.setText("Listar Jtable");
+        MListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MListarActionPerformed(evt);
+            }
+        });
+        jMenu3.add(MListar);
+
+        jMenuItem1.setText("Jlist");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem1);
+
+        jMenu1.add(jMenu3);
+
         jMenuBar1.add(jMenu1);
         jMenuBar1.add(jMenu2);
 
@@ -301,14 +487,18 @@ public class JF1 extends javax.swing.JFrame {
 
     private void JMCARRETERAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMCARRETERAActionPerformed
         // TODO add your handling code here:
+        Carretera.setModal(true);
+        Carretera.pack();
+        Carretera.setLocationRelativeTo(this);
+        Carretera.setVisible(true);
     }//GEN-LAST:event_JMCARRETERAActionPerformed
 
     private void JMLUGARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMLUGARActionPerformed
         // TODO add your handling code here:
         Lugar.setModal(true);
-        Lugar.pack();//diseño 
-        Lugar.setLocationRelativeTo(this);//para el centor
-        Lugar.setVisible(true);//para que se vea
+        Lugar.pack();
+        Lugar.setLocationRelativeTo(this);
+        Lugar.setVisible(true);
     }//GEN-LAST:event_JMLUGARActionPerformed
 
     private void JBOTTONLUGARMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBOTTONLUGARMouseClicked
@@ -320,10 +510,6 @@ public class JF1 extends javax.swing.JFrame {
         Carretera carretera_salida;
         String Categoria_restaurantes;
         int Calificacion;
-        int Codigo;
-        int Distancia;
-        String Carretera_inicio;
-        String Carretera_final;
         String Categoria_canchas;
         String Estado;
         Nombre = JTNOMBRE.getText();
@@ -334,7 +520,7 @@ public class JF1 extends javax.swing.JFrame {
         if (TABPRINCIPAL.getSelectedIndex() == 0) {
             Categoria_canchas = JBCATEGORIACANCHA.getSelectedItem().toString();
             Estado = JCOMOESTADO.getSelectedItem().toString();
-            lLugar.add(new Lugar(Nombre, Direccion, Nivel_Seguridad, carretera_entrada, carretera_salida));
+            lLugar.add(new Canchas(Categoria_canchas, Estado, Nombre, Direccion, Nivel_Seguridad, carretera_entrada, carretera_salida));
             JOptionPane.showMessageDialog(this, "Agrego exitosamente");
         } else if (TABPRINCIPAL.getSelectedIndex() == 2) {
             Categoria_restaurantes = JBCOMBORESTAURANTE.getSelectedItem().toString();
@@ -348,15 +534,88 @@ public class JF1 extends javax.swing.JFrame {
         JTNOMBRE.setText("");
         JTLUGAR.setText("");
         JTSEGURIDAD.setText("");
-        JCOMBOENTRADA.setSelectedIndex(0);
-        JCOMBOSALIDA.setSelectedIndex(0);
-        JBCATEGORIACANCHA.setSelectedIndex(0);
-        JCOMOESTADO.setSelectedIndex(0);
-        JBCOMBORESTAURANTE.setSelectedIndex(0);
-        JCOMBOCALIFICACION.setSelectedIndex(0);
-
-
+        JCOMBOENTRADA.setSelectedIndex(-1);
+        JCOMBOSALIDA.setSelectedIndex(-1);
+        JBCATEGORIACANCHA.setSelectedIndex(-1);
+        JCOMOESTADO.setSelectedIndex(-1);
+        JBCOMBORESTAURANTE.setSelectedIndex(-1);
+        JCOMBOCALIFICACION.setSelectedIndex(-1);
     }//GEN-LAST:event_JBOTTONLUGARMouseClicked
+
+    private void JBOTTONGUARDARCARRETERAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBOTTONGUARDARCARRETERAMouseClicked
+        // TODO add your handling code here:
+        int Codigo;
+        int Distancia;
+        Lugar Carretera_inicio;
+        Lugar Carretera_final;
+        Codigo = Integer.parseInt(JTcodigo.getText());
+        Distancia = Integer.parseInt(JTDISTANCIA.getText());
+        Carretera_inicio = (Lugar)ENTRADA1.getSelectedItem();
+        Carretera_final = (Lugar)SALIDA1.getSelectedItem();
+        lCarretera.add(new Carretera(Codigo, Distancia, Carretera_inicio, Carretera_final));
+        JOptionPane.showMessageDialog(this, "Agrego exitosamente");
+        JTcodigo.setText("");
+        JTDISTANCIA.setText("");
+        ENTRADA1.setSelectedIndex(-1);
+        SALIDA1.setSelectedIndex(-1);
+    }//GEN-LAST:event_JBOTTONGUARDARCARRETERAMouseClicked
+
+    private void LugarWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_LugarWindowActivated
+        // TODO add your handling code here:
+        if (Lugar.isActive()) {
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (Object temp : lCarretera) {
+                modelo.addElement(temp);
+            }
+            JCOMBOENTRADA.setModel(modelo);
+            JCOMBOSALIDA.setModel(modelo);
+        }
+    }//GEN-LAST:event_LugarWindowActivated
+
+    private void MListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MListarActionPerformed
+        // TODO add your handling code here:
+        Listar.setModal(true);
+        Listar.pack();//diseño 
+        Listar.setLocationRelativeTo(this);//para el centor
+        Listar.setVisible(true);//para que se vea
+    }//GEN-LAST:event_MListarActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+//        // TODO add your handling code here:
+        
+        int Posicion = Integer.parseInt(
+                JOptionPane.showInputDialog("Ingrese Posicion actual :"));
+            
+        for (int i = 0; i < lCarretera.size(); i++) {
+            if (lCarretera.size()==3){
+            }
+            
+        }
+                
+                DefaultListModel Modelo = (DefaultListModel) jList_lugares.getModel();
+                
+
+        Jlist.setModal(true);
+        Jlist.pack();
+        Jlist.setLocationRelativeTo(this);
+        Jlist.setVisible(true);
+//
+
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void comboopcionItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboopcionItemStateChanged
+        // TODO add your handling code here:
+        (if evt.getStateChange()==2){
+            if(comboopcion.getSelectedItem().toString().equals("Restaurate")){
+                DefaulTableModel modelo = new DefaulTableModel();
+                
+            }
+            
+            
+        }
+            
+        
+    }//GEN-LAST:event_comboopcionItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -402,8 +661,11 @@ public class JF1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog Carretera;
+    private javax.swing.JComboBox<String> ENTRADA1;
     private javax.swing.JComboBox<String> JBCATEGORIACANCHA;
     private javax.swing.JComboBox<String> JBCOMBORESTAURANTE;
+    private javax.swing.JButton JBOTTONGUARDARCARRETERA;
     private javax.swing.JButton JBOTTONLUGAR;
     private javax.swing.JComboBox<String> JCOMBOCALIFICACION;
     private javax.swing.JComboBox<String> JCOMBOENTRADA;
@@ -411,13 +673,26 @@ public class JF1 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> JCOMOESTADO;
     private javax.swing.JMenuItem JMCARRETERA;
     private javax.swing.JMenuItem JMLUGAR;
+    private javax.swing.JTextField JTDISTANCIA;
     private javax.swing.JTextArea JTLUGAR;
     private javax.swing.JTextField JTNOMBRE;
     private javax.swing.JTextField JTSEGURIDAD;
+    private javax.swing.JTextField JTcodigo;
+    private javax.swing.JDialog Jlist;
+    private javax.swing.JDialog Listar;
     private javax.swing.JDialog Lugar;
+    private javax.swing.JMenuItem MListar;
+    private javax.swing.JComboBox<String> SALIDA1;
     private javax.swing.JTabbedPane TABPRINCIPAL;
+    private javax.swing.JComboBox<String> comboopcion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -426,14 +701,20 @@ public class JF1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList_lugares;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
     ArrayList lLugar = new ArrayList();
